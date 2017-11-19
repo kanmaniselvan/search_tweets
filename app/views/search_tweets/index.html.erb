@@ -1,0 +1,19 @@
+<% content_for :head do %>
+    <%= stylesheet_link_tag 'search_tweets/index' %>
+<% end %>
+
+<div class="search-header-wrap-container">
+  <div class="search-cont">
+
+  </div>
+</div>
+
+<div class="tweets-list-container">
+  <ul id="tweets-list">
+    <% @results.each do |tweet_hash| %>
+        <li class="tweets-list-li">
+          <%= tweet_hash[:tweet] %>
+        </li>
+    <% end %>
+  </ul>
+</div>
