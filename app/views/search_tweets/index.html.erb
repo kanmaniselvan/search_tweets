@@ -4,7 +4,11 @@
 
 <div class="search-header-wrap-container">
   <div class="search-cont">
+    <%= form_tag(search_tweets_path, method: :get) do %>
+        <%= text_field_tag('q', params[:q], {class: 'search-box'}) %>
+    <% end %>
 
+    <span class="loader-text">Searching ...</span>
   </div>
 </div>
 
@@ -12,8 +16,15 @@
   <ul id="tweets-list">
     <% @results.each do |tweet_hash| %>
         <li class="tweets-list-li">
-          <%= tweet_hash[:tweet] %>
+          <h3><%= tweet_hash[:tweet] %></h3>
+          <p>Other info..</p>
         </li>
     <% end %>
   </ul>
 </div>
+
+<script type="application/javascript">
+  $('form').submit(function () {
+      $('.loader-text').addClass('show');
+  })
+</script>

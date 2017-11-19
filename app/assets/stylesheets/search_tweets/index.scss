@@ -6,5 +6,58 @@
   .search-cont {
     height: 100%;
     padding-top: 30px;
+
+    .search-box {
+      margin-right: 5%;
+      display: inline-block;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      border: 1px solid #C2C2C2;
+      box-shadow: 1px 1px 4px #EBEBEB;
+      -moz-box-shadow: 1px 1px 4px #EBEBEB;
+      -webkit-box-shadow: 1px 1px 4px #EBEBEB;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      padding: 7px;
+      outline: none;
+      width: 210px;
+    }
+  }
+
+  .loader-text {
+    color: #ffe554;
+    display: none;
+    padding-top: 9px;
+  }
+
+  .loader-text.show {
+    display: inline-block;
+  }
+}
+
+#tweets-list {
+  margin: 20px;
+  ul {
+    list-style-type: none;
+    width: 500px;
+  }
+
+  h3 {
+    font: bold 20px Helvetica, Verdana, sans-serif;
+  }
+
+  li p {
+    font: 200 12px Georgia, Times New Roman, serif;
+  }
+
+  li {
+    padding: 10px;
+    overflow: auto;
+  }
+
+  li:hover {
+    background: #eee;
   }
 }
