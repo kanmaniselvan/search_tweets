@@ -5,7 +5,7 @@
 <div class="search-header-wrap-container">
   <div class="search-cont">
     <%= form_tag(search_tweets_path, method: :get) do %>
-        <%= text_field_tag('q', params[:q], {class: 'search-box'}) %>
+        <%= text_field_tag('q', params[:q], {class: 'search-box', placeholder: 'Search for tweets ...'}) %>
     <% end %>
 
     <span class="loader-text">Searching ...</span>
@@ -14,17 +14,21 @@
 
 <div class="tweets-list-container">
   <ul id="tweets-list">
-    <% @results.each do |tweet_hash| %>
-        <li class="tweets-list-li">
-          <h3><%= tweet_hash[:tweet] %></h3>
-          <p>Other info..</p>
-        </li>
+    <% if @results.present? %>
+        <% @results.each do |tweet_hash| %>
+            <li class="tweets-list-li">
+              <h3><img class="user-image" src="<%= tweet_hash['user']['profile_image_url'] %>" /><%= tweet_hash['text'] %></h3>
+              <p><%= tweet_hash['user']['name'] %> | <span class="twitter-handler">@<%= tweet_hash['user']['screen_name']%></span> </p>
+            </li>
+        <% end %>
+    <% else %>
+        No tweets found.
     <% end %>
   </ul>
 </div>
 
 <script type="application/javascript">
-  $('form').submit(function () {
-      $('.loader-text').addClass('show');
-  })
+    $('form').submit(function () {
+        $('.loader-text').addClass('show');
+    })
 </script>

@@ -36,5 +36,6 @@ build/
 .rvmrc
 .env
 .idea/*
+.byebug_history
 
 log/*

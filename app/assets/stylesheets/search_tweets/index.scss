@@ -39,6 +39,13 @@
 
 #tweets-list {
   margin: 20px;
+  padding: 10px;
+  overflow: auto;
+
+  .twitter-handler {
+    color: #1DA1F2;
+  }
+
   ul {
     list-style-type: none;
     width: 500px;
@@ -48,16 +55,19 @@
     font: bold 20px Helvetica, Verdana, sans-serif;
   }
 
-  li p {
-    font: 200 12px Georgia, Times New Roman, serif;
-  }
-
   li {
     padding: 10px;
     overflow: auto;
+    border-bottom: 1px solid #bfbfbf;
   }
 
   li:hover {
     background: #eee;
+  }
+
+  li .user-image {
+    display: inline-block;
+    float: left;
+    margin: 0 15px 0 0;
   }
 }
